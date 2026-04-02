@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Receipt - Adebusy Concept</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: #333; margin: 0; padding: 20px; background-color: #f9f9f9; }
+        .receipt-box { max-width: 800px; margin: auto; padding: 30px; border: 1px solid #eee; background: #fff; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); }
+        .header { display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #333; padding-bottom: 20px; }
+        .logo { max-width: 150px; }
+        .company-info h2 { margin: 0; color: #002D62; }
+        .details-section { display: flex; justify-content: space-between; margin: 20px 0; line-height: 1.6; }
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+        th { background: #002D62; color: white; text-align: left; padding: 12px; }
+        td { padding: 12px; border-bottom: 1px solid #eee; }
+        .totals { text-align: right; margin-top: 20px; font-size: 1.1em; }
+        .footer { margin-top: 50px; text-align: center; font-size: 0.9em; color: #777; }
+        .signature-line { margin-top: 40px; border-top: 1px solid #333; width: 200px; display: inline-block; }
+        @media print { .receipt-box { box-shadow: none; border: none; } button { display: none; } }
+    </style>
+</head>
+<body>
+
+<div class="receipt-box">
+    <div class="header">
+        <img src="{{LOGO_URL}}" alt={{COMPANY_NAME}} class="logo">
+        <div class="company-info">
+            <h2>{{COMPANY_NAME}}</h2>
+            <p>25, Repton Drive, Coventry<br>Tel: +44 123 456 789</p>
+        </div>
+    </div>
+
+    <div class="details-section">
+        <div>
+            <strong>BILL TO:</strong><br>
+            Splendor Concept<br>
+            Client Address Line 1
+        </div>
+        <div>
+            <strong>Receipt #:</strong> 000124<br>
+            <strong>Date:</strong> 03 Feb 2026<br>
+            <strong>Status:</strong> PAID
+        </div>
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Description</th>
+                <th>Qty</th>
+                <th>Unit Price</th>
+                <th>Total</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>MacBook Pro M3 (14-inch)</td>
+                <td>1</td>
+                <td>£1,000.00</td>
+                <td>£1,000.00</td>
+            </tr>
+            <tr>
+                <td>Optical Wireless Mouse</td>
+                <td>1</td>
+                <td>£200.00</td>
+                <td>£200.00</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="totals">
+        <p>Subtotal: £1,200.00</p>
+        <p>VAT (20%): £240.00</p>
+        <p><strong>Grand Total: £1,440.00</strong></p>
+    </div>
+
+    <div class="footer">
+        <p>Thank you for your business!</p>
+        <div style="text-align: left; margin-top: 30px;">
+            <p>Authorized Signature:</p>
+            <div>{{SIGNATURE}}</div>
+            <div class="signature-line"></div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

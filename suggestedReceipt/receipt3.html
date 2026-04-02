@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href='https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Inter:wght@300;400;700&family=Dancing+Script&display=swap' rel='stylesheet'>
+    <style>
+        :root { --accent: #00FF9D; --bg: #1A1A1A; --card: #252525; --text: #FFFFFF; --text-dim: #A0A0A0; }
+        body { font-family: 'Inter', sans-serif; background-color: #f0f0f0; padding: 40px; color: var(--text); }
+        
+        .receipt-container { 
+            background: var(--bg); max-width: 750px; margin: auto; border-radius: 16px; 
+            overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.3); border: 1px solid #333;
+        }
+
+        /* Top Status Bar */
+        .status-bar { background: #000; padding: 12px 30px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #333; }
+        .status-pill { background: rgba(0, 255, 157, 0.1); color: var(--accent); padding: 4px 12px; border-radius: 20px; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; }
+
+        .main-header { padding: 40px 30px; display: flex; justify-content: space-between; align-items: flex-start; }
+        .brand h1 { font-family: 'JetBrains Mono', monospace; font-size: 24px; margin: 0; color: var(--accent); }
+        .brand p { color: var(--text-dim); font-size: 13px; margin: 5px 0; }
+
+        .qr-placeholder { background: white; padding: 8px; border-radius: 8px; width: 80px; height: 80px; }
+
+        /* Grid Info */
+        .details-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; padding: 0 30px 30px; border-bottom: 1px solid #333; }
+        .label { color: var(--text-dim); font-size: 10px; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; font-weight: 700; }
+
+        /* Tech Table */
+        .items-table { width: 100%; border-collapse: collapse; font-family: 'JetBrains Mono', monospace; }
+        .items-table th { text-align: left; padding: 15px 30px; font-size: 11px; color: var(--accent); background: #222; }
+        .items-table td { padding: 15px 30px; border-bottom: 1px solid #333; font-size: 14px; }
+        
+        /* Summary Section */
+        .summary-wrapper { padding: 30px; display: flex; justify-content: space-between; background: #222; }
+        .handwriting { font-family: 'Dancing Script', cursive; font-size: 24px; color: var(--accent); margin-top: 5px; }
+        .total-amount { font-size: 32px; font-weight: 700; color: var(--accent); text-shadow: 0 0 10px rgba(0, 255, 157, 0.3); }
+
+        /* Signature Area */
+        .signature-box { padding: 40px 30px; display: flex; justify-content: flex-end; }
+        .sig-container { text-align: center; width: 180px; }
+        .sig-img { max-width: 130px; filter: brightness(0) invert(1) drop-shadow(0 0 5px var(--accent)); margin-bottom: -15px; }
+        .sig-line { border-top: 1px solid var(--accent); padding-top: 8px; font-size: 11px; color: var(--text-dim); letter-spacing: 1px; }
+
+        .footer-tag { text-align: center; padding: 20px; font-size: 10px; color: #555; text-transform: uppercase; letter-spacing: 2px; }
+    </style>
+</head>
+<body>
+
+<div class="receipt-container">
+    <div class="status-bar">
+        <div class="status-pill">● Transaction Confirmed</div>
+        <div style="font-size: 11px; color: var(--text-dim);">ID: 2026-F4-ADE</div>
+    </div>
+
+    <div class="main-header">
+        <div class="brand">
+            <h1>AdebusyConcept</h1>
+            <p>25, Repton Drive, Coventry</p>
+            <p>Manager: Alao Ramon</p>
+        </div>
+        <div class="qr-placeholder">
+            <img src="https://api.qrserver.com/v1/create-qr-code/?size=80x80&data=https://adebusy.com/receipt/001" alt="QR">
+        </div>
+    </div>
+
+    <div class="details-grid">
+        <div>
+            <div class="label">Billed To</div>
+            <div style="font-size: 16px; font-weight: 700;">Splendor Concept</div>
+        </div>
+        <div style="text-align: right;">
+            <div class="label">Issued On</div>
+            <div>04 Feb 2026 • 12:18 PM</div>
+        </div>
+    </div>
+
+    <table class="items-table">
+        <thead>
+            <tr>
+                <th>DESCRIPTION</th>
+                <th>QTY</th>
+                <th style="text-align: right;">TOTAL</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>MacBook Pro M3 (14-inch)</td>
+                <td>01</td>
+                <td style="text-align: right;">£1,000.00</td>
+            </tr>
+            <tr>
+                <td>Wireless Mouse (Ergo)</td>
+                <td>01</td>
+                <td style="text-align: right;">£200.00</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="summary-wrapper">
+        <div style="max-width: 60%;">
+            <div class="label">Amount in Words</div>
+            <div class="handwriting">One Thousand Two Hundred Pounds Only.</div>
+        </div>
+        <div style="text-align: right;">
+            <div class="label" style="color: var(--accent);">Grand Total</div>
+            <div class="total-amount">£1,200.00</div>
+        </div>
+    </div>
+
+    <div class="signature-box">
+        <div class="sig-container">
+            <img src="./logos/jolade_v2.svg" class="sig-img" alt="Sig">
+            <div class="sig-line">MANAGER SIGNATURE</div>
+            <div>./logos/jolade_v2.svg</div>
+        </div>
+    </div>
+
+    <div class="footer-tag">
+        Digital-First: 0.02kg CO2 Saved • Thank you for your business
+    </div>
+</div>
+
+</body>
+</html>
