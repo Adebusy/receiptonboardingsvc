@@ -1,0 +1,65 @@
+# Binaries for programs and plugins
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+
+main
+bin/
+build/
+*.exe
+*.out
+
+# Test binary
+*.test
+
+# Output of go build / go install
+bin/
+build/
+
+node_modules/
+
+# Go workspace file
+go.work
+go.work.sum
+
+# Dependency directories (legacy)
+Godeps/
+
+# IDE/editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Environment variables
+.env
+.env.local
+
+# Coverage files
+coverage.out
+*.coverprofile
+
+# Temporary files
+tmp/
+temp/
+
+# Debug files
+debug
+
+# Test output
+*.out
+
+# Docker (optional)
+docker-compose.override.yml
+
+# Kubernetes (optional)
+*.kubeconfig
