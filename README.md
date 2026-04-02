@@ -61,5 +61,14 @@ Target Users
 * Informal and micro-businesses
 * SMEs operating in WhatsApp-centric markets
 
+
+ **** Resource and component****
+  
+  *Stack Golang
+  
+  *Database Postgres
+  
+  *Log/Obeservability: OpenTelemetry
+
 Summary
 ReceiptMe transforms receipt creation into a fast, intuitive, and professional process. By combining AI-powered data extraction, reusable business profiles, and WhatsApp-based sharing, the app provides SMEs with a modern yet simple solution to an everyday business need.
